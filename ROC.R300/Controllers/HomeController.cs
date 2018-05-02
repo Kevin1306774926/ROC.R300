@@ -50,8 +50,8 @@ namespace ROC.R300.Controllers
             //sb.Append(" Beta = " + bc.Beta);
             //sb.Append(" Crawler = " + bc.Crawler);
             //sb.Append(" AOL = " + bc.AOL);
-            sb.Append(" Win16:" + bc.Win16);
-            sb.Append(" Win32:" + bc.Win32);
+            //sb.Append(" Win16:" + bc.Win16);
+            //sb.Append(" Win32:" + bc.Win32);
             //sb.Append(" Frames:" + bc.Frames);
             //sb.Append(" Tables" + bc.Tables);
             sb.Append(" Cookies:" + bc.Cookies);
