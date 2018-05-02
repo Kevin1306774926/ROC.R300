@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="条码，条形码，二维码，条码打印，防重复防错防漏，条码检测，在线检测，离线检测，防重防错防漏，条码三防，打印条码，条码打印软件，条码印刷，ROC300，ROC310，R300，R200，瑞科条码" />
+    <meta name="description" content="条码防重复防错防漏检测系统 ：主要用来检测打印的条码等级及是否可扫描,是否存在重号、漏号、 错号、跳号、超过范围等多种不良现象。" />
+    <title>@ViewBag.Title-深圳瑞科条码</title>
+    <link rel="favicon" href="~/favicon.ico">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/bootstrap-theme.css" media="screen">
+    <link rel='stylesheet' id='camera-css' href='~/Content/camera.css' type='text/css' media='all'>
+    <link rel="stylesheet" href="~/Content/Site.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Button for smallest screens -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.rocvip.cn">
+                    <img src="~/images/logo.png" alt="瑞科条码logo">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li class="active"><a href="http://www.rocvip.cn">首页</a></li>
+                    <li><a href="#introduction">方案介绍</a></li>
+                    <li><a href="#scene">适用场景</a></li>
+                    <li><a href="#features">功能特点</a></li>
+                    <li><a href="#video">案例视频</a></li>
+                    <li><a href="#about">联系我们</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="head">
+        <div class="container">
+            <div class="heading-text">
+                <h1 class="animated flipInY delay1">条码防重复防错防漏检测系统</h1>
+                <p>提高条码标签打印质量&nbsp;&nbsp;\\&nbsp;&nbsp;降低产品出货错误成本</p>
+            </div>
+
+            <div class="fluid_container">
+                <div class="camera_wrap camera_emboss" id="camera_wrap_4">
+                    <div data-src="images/img1.jpg">
+                    </div>
+                    <div data-src="images/zebra.jpg">
+                    </div>
+                    <div data-src="images/datalogic.jpg">
+                    </div>
+                </div><!-- #camera_wrap_3 -->
+            </div><!-- .fluid_container -->
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <footer id="footer">
+        <div class="footer2">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-6 panel">
+                        <div class="panel-body">
+                            <p class="simplenav">
+                                <a href="http://www.rocvip.cn">首页</a> |
+                                <a href="#introduction">条码在线检测方案</a> |
+                                <a href="#roc200">条码离线检测方案</a> |
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 panel">
+                        <div class="panel-body">
+                            <p class="text-right">
+                                Copyright &copy; 2018.<a href="http://www.rocbarcode.com/" target="_blank" title="瑞科条码">深圳瑞科条码</a>  All rights reserved
+                                备案号：粤ICP备17088639号-2
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /row of panels -->
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/camera.min.js"></script>
+    <script src="~/Scripts/jquery.easing.1.3.js"></script>
+    <script>
+        jQuery(function () {
+            jQuery('#camera_wrap_4').camera({
+                transPeriod: 500,
+                time: 3000,
+                height: '600',
+                loader: 'false',
+                pagination: true,
+                thumbnails: false,
+                hover: false,
+                playPause: false,
+                navigation: false,
+                opacityOnGrid: false,
+                overlayer: true,
+                imagePath: 'images/'
+            });
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>
