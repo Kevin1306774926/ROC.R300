@@ -190,6 +190,9 @@
     <Content Include="images\img2.jpg" />
     <Content Include="images\img3.jpg" />
     <Content Include="images\logo.png" />
+    <Content Include="images\R100N_1.jpg" />
+    <Content Include="images\R100N_2.jpg" />
+    <Content Include="images\R100N_3.jpg" />
     <Content Include="images\ROC200.jpg" />
     <Content Include="images\ROC300.jpg" />
     <Content Include="images\roc300_ppt.png" />
