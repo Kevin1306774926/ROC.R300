@@ -1,6 +1,7 @@
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     font-weight: normal;
+    padding-top:60px;
 }
 /*General*/
 h1, h2, h3, h4, h5, h6 {
@@ -151,14 +152,14 @@ label {
 
 .navbar-inverse {
     background: #fff;
+    border: none;
+    height:60px;
+    border:none;
 }
 
-.navbar-inverse {
-    border: none;
-}
 
     .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > .open ul > a {
-        color: #797979;
+        color: #777;
         font-size: 15px;
         font-weight: 700;
     }
@@ -204,8 +205,6 @@ div.hbox {
     padding: 10px 15px;
 }
 
-.h-body {
-}
 
 .jumbotron {
     background-color: #E0E0E0;
@@ -832,6 +831,8 @@ padding:4px 8px;
     .navbar-collapse ul {
         text-align: right;
         margin-right: 0px;
+        background-color:#333333;
+        color:#fff;
     }
 }
 /* Small devices (tablets, up to 768px) */
@@ -910,4 +911,25 @@ font-size: 22px;
 }
 p{
     text-indent:2em;
+}
+
+#foot-mobile {
+    margin: 0 auto;
+    height: 50px;
+    background-color: #333333;
+    color: #EEEEEE;
+}
+
+    #foot-mobile ul {
+        list-style: none;
+    }
+
+    #foot-mobile li {
+        display: inline-block;
+        line-height: 50px;
+        margin: 0 10px;
+    }
+
+.img-case{
+    max-height:250px;
 }
