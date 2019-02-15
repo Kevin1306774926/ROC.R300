@@ -45,34 +45,19 @@
     <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="~/Scripts/Chart.min.js"></script>
     <script type="text/javascript">
-        var data = {
-            labels: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
-            datasets: [
-                {
-                    fillColor: "#CCCCFF",
-                    strokeColor: "rgba(220,220,220,1)",
-                    label: "2018年",
-                    data: [65, 59, 90, 81, 56, 55, 40]
-                }
-            ]
-        }
-
         var charts = [
             {
-                chart: $('#dayChart').get(0).getContext('2d'), id: '#dayChart', labels: ["Monday", "Tuesday", "Wednesday", "Thursday", 'Friday', 'Saturday', 'Sunday']
+                chart: $('#dayChart'), id: '#dayChart', label:'日统计'
             },
             {
-                chart: $('#weekChart').get(0).getContext('2d'), id: '#weekChart', labels: ["Monday", "Tuesday", "Wednesday", "Thursday", 'Friday', 'Saturday', 'Sunday']
+                chart: $('#weekChart'), id: '#weekChart', label: '周统计'
             },
             {
-                chart: $('#monthChart').get(0).getContext('2d'), id: '#monthChart', labels: ["Monday", "Tuesday", "Wednesday", "Thursday", 'Friday', 'Saturday', 'Sunday']
+                chart: $('#monthChart'), id: '#monthChart', label: '月统计'
             }
         ];
 
         $(function () {
-            //var ctx = $("#dayChart").get(0).getContext("2d");
-            //var myNewChart = new Chart(ctx);
-            //myNewChart.Bar(data);
             ReportChart(0);
         });
 
@@ -89,13 +74,17 @@
         }
 
         function InitChart(opt) {
-            //var ctx = $("#dayChart").get(0).getContext("2d");
-            var myChart = new Chart(opt.chart);
-            myChart.Bar({
-                labels: opt.labels,
-                datasets: [{
-                    data: opt.data
-                }]
+            var myChart = new Chart(opt.chart, {
+                type: 'bar',
+                data: {
+                    labels:opt.labels,
+                    datasets: [{
+                        label: opt.label,
+                        backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data:opt.data
+                    }]
+                }
             });
         }
     </script>
