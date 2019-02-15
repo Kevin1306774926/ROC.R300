@@ -1,0 +1,9 @@
+﻿body {
+    background-color:#efefef;
+}
+
+.tab-content {
+    margin-top: -1px;
+    border: 1px solid #dee2e6;
+    background: #fff;
+}

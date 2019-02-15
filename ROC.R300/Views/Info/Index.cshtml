@@ -1,0 +1,103 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/admin.css" />
+    <title>统计信息</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container-fluid">
+            <h1>统计信息</h1>
+            <div class="row">
+                <div class="col">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item"><a href="#day" class="nav-link" data-toggle="tab" onclick="ReportChart(0)">天</a></li>
+                        <li class="nav-item"><a href="#week" class="nav-link" data-toggle="tab" onclick="ReportChart(1)">周</a></li>
+                        <li class="nav-item"><a href="#month" class="nav-link" data-toggle="tab" onclick="ReportChart(2)">月</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="day" class="tab-pane container active">
+                            <canvas id="dayChart" width="900px" height="600px"></canvas>
+                        </div>
+                        <div id="week" class="tab-pane container fade">
+                            <canvas id="weekChart" width="900px" height="600px"></canvas>
+                        </div>
+                        <div id="month" class="tab-pane container fade">
+                            <canvas id="monthChart" width="900px" height="600px"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/Chart.min.js"></script>
+    <script type="text/javascript">
+        var data = {
+            labels: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+            datasets: [
+                {
+                    fillColor: "#CCCCFF",
+                    strokeColor: "rgba(220,220,220,1)",
+                    label: "2018年",
+                    data: [65, 59, 90, 81, 56, 55, 40]
+                }
+            ]
+        }
+
+        var charts = [
+            {
+                chart: $('#dayChart').get(0).getContext('2d'), id: '#dayChart', labels: ["Monday", "Tuesday", "Wednesday", "Thursday", 'Friday', 'Saturday', 'Sunday']
+            },
+            {
+                chart: $('#weekChart').get(0).getContext('2d'), id: '#weekChart', labels: ["Monday", "Tuesday", "Wednesday", "Thursday", 'Friday', 'Saturday', 'Sunday']
+            },
+            {
+                chart: $('#monthChart').get(0).getContext('2d'), id: '#monthChart', labels: ["Monday", "Tuesday", "Wednesday", "Thursday", 'Friday', 'Saturday', 'Sunday']
+            }
+        ];
+
+        $(function () {
+            //var ctx = $("#dayChart").get(0).getContext("2d");
+            //var myNewChart = new Chart(ctx);
+            //myNewChart.Bar(data);
+            ReportChart(0);
+        });
+
+        function ReportChart(i) {
+            $.ajax({
+                method: "post",
+                url: "/Info/GetReport",
+                data: {type:i}
+            }).done(function (dat) {
+                charts[i].labels = dat.Labels;
+                charts[i].data = dat.Data;
+                InitChart(charts[i]);
+            });
+        }
+
+        function InitChart(opt) {
+            //var ctx = $("#dayChart").get(0).getContext("2d");
+            var myChart = new Chart(opt.chart);
+            myChart.Bar({
+                labels: opt.labels,
+                datasets: [{
+                    data: opt.data
+                }]
+            });
+        }
+    </script>
+</body>
+</html>
